@@ -1,0 +1,16 @@
+# Installation process problems
+- Ran into a problem with installing requirements needed to use this command
+    - ```pip3 install -r requirements.txt --user```
+- Ran into a problem installing django too
+    - ```pip3 install django --user```
+- Problem with installing pillow
+    - Per the forums took out the versioning number in ./server/requirements.txt
+- 03052023 Completed and tested all items in module 1. 
+    - Took all requested screenshots
+    - Everything for module 1 located in the module 1 folder
+    - Git commit and push done
+- 03062023
+    - Completed the User Management half of the module
+        - Created the superuser
+        - Created the login, logout, and registration modules
+        - pushed code changes up to github

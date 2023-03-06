@@ -140,3 +140,10 @@ server/djangoapp/migrations/
 *.pyc
 server/djangoapp/migrations/
 
+creds.md
+apikey.json
+codeforfinal.md
+scratchpad.txt
+scratchpad.js
+scratchpad.html
+scratchpad.py
