@@ -1,0 +1,49 @@
+{% extends "djangoapp/layout.html" %}
+<!-- Weird that I had to do this here, it doesn't seem to inherit from the layout? -->
+{% load static %}
+{% load humanize %}
+
+{% block body %}
+
+<div class="container mt-5">
+    <h1 class="text-center">
+        Welcome to Best Cars dealership, home to the best cars in North America.
+
+    </h1>
+    <h5 class="text-muted text-center"> We sell domestic and imported cars at reasonable prices.</h5>
+    <div class="container my-4">
+
+        <hr class="mb-5" />
+
+        <div class="row">
+
+            <div class="col-lg-4 col-md-12 mb-4">
+                <img src="{% static 'djangoapp/images/olav-tvedt--oVaYMgBMbs-unsplash.jpg' %}" class="img-fluid mb-4 image-shadow" alt="">
+                <img src="{% static 'djangoapp/images/erik-mclean-ZRns2R5azu0-unsplash.jpg' %}" class=" img-fluid mb-4 image-shadow" alt="" data-wow-delay="0.3s">
+
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+
+                <img src="{% static 'djangoapp/images/jose-carbajal-8xyki0bqvgw-unsplash.jpg' %}" class="img-fluid mb-4 image-shadow" alt="" data-wow-delay="0.1s">
+
+                <img src="{% static 'djangoapp/images/ville-kaisla-HNCSCpWrVJA-unsplash.jpg' %}" class="img-fluid mb-4 image-shadow" alt="" data-wow-delay="0.4s">
+
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+
+                <img src="{% static 'djangoapp/images/ben-weber-7lGiQDLnkUs-unsplash.jpg' %}" class="img-fluid mb-4 image-shadow" alt="" data-wow-delay="0.2s">
+
+                <img src="{% static 'djangoapp/images/grahame-jenkins-p7tai9P7H-s-unsplash.jpg' %}" class="img-fluid mb-4 image-shadow" alt="" data-wow-delay="0.5s">
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}

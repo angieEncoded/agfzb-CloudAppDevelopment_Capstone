@@ -1,0 +1,23 @@
+{% extends "djangoapp/layout.html" %}
+<!-- Weird that I had to do this here, it doesn't seem to inherit from the layout? -->
+{% load static %}
+{% load humanize %}
+{% block body %}
+
+
+<div class="container mt-5">
+    <div class="card mx-auto" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">Best Cars Dealership</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Contact us!</h6>
+            <p class="card-text"><strong>Address:</strong></p>
+            <p class="card-text"> 567 Awesome Cars Drive <br />Bastok, Vana'diel 99999</p>
+            <p><strong>Phone:</strong></p>
+            <p>999-999-9999</p>
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
