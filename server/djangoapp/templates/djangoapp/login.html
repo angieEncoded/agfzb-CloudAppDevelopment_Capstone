@@ -1,0 +1,27 @@
+{% extends "djangoapp/layout.html" %}
+<!-- Weird that I had to do this here, it doesn't seem to inherit from the layout? -->
+{% load static %}
+{% load humanize %}
+
+{% block body %}
+
+<div class="form-background form-small">
+    <form action="{% url 'djangoapp:login_request' %}" method="post">
+        {% csrf_token %}
+
+        <h2 class="text-center baskerville-font">Welcome to Dealership Review!</h2>
+        <h5 class="text-muted text-center baskerville-font">Please log in below</h5>
+        <div class="mb-3 mt-2">
+            <input class="form-control my-2" type="text" placeholder="Enter User Name: " name="username" required>
+        </div>
+        <div class="mb-3 mt-2">
+            <input class=" form-control my-2" type="password" placeholder="Enter Password: " name="password" required>
+        </div>
+        <div>
+            <button class="mt-1 btn btn-secondary" type="submit">Login</button>
+        </div>
+
+    </form>
+</div>
+
+{% endblock %}

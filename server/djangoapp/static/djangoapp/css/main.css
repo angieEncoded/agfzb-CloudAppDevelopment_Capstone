@@ -28,3 +28,14 @@ tr:hover{
   cursor: pointer;
   font-weight: bold !important;
 }
+
+.btn-login-color {
+  background-color: rgb(172, 100, 240);
+  color:white;
+}
+
+.btn-login-color:hover{
+  background-color: rgb(123, 35, 210);
+  border-color: rgb(123, 35, 210);
+  color:white;
+}
