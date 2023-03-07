@@ -14,3 +14,7 @@
         - Created the superuser
         - Created the login, logout, and registration modules
         - pushed code changes up to github
+    - Completed the CICD half of the module
+        - Note that the banner to manually run the workflow never appeared for me
+        - Could not find any threads in the forums or any information online about why except a vague possibility that something wasn't defaulted to the correct default branch name (this one is still legacy master)
+        - The linter DID run correctly on push so I am considering this module complete
