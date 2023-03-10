@@ -45,3 +45,9 @@
     - Completed the get-dealership-by-state NodeJS function, tested and working
         - endpoint is https://us-south.functions.cloud.ibm.com/api/v1/namespaces/3940b2d5-8cd9-42a0-ba15-e0eea243f2d7/actions/dealership-package/get-dealership-by-state
         - Params is ```STATE="STATE ABBREVIATION"```
+    - Created the CarModel and CarMake models and ran the migrations
+        - NOTE - in this project you have to specify the location ```python manage.py makemigrations djangoapp``` this is not the same as other projects unsure what is different in their skeleton
+    - Created the root\root superuser for the peer review. Took the screen shots requested of carmake and the carmakelist
+    - Committed all changes to github
+    - LEFT OFF ON CREATE DJANGO PROXY SERVICES OF CLOUD FUNCTIONS
+
