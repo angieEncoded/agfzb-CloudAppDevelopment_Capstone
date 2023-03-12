@@ -17,8 +17,7 @@ function main(params) {
 }
 
 function getDbs(cloudant) {
-  cloudant
-    .getAllDbs()
+  cloudant.getAllDbs()
     .then((body) => {
       body.forEach((db) => {
         dbList.push(db);
@@ -35,7 +34,6 @@ function getDbs(cloudant) {
 
 
 if (params.dealer_id) {
-  return { "result": "HIT IT" }
   try {
     let dbList = await cloudant.postFind({
       db: 'dealerships',

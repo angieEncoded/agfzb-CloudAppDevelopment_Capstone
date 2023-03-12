@@ -23,7 +23,7 @@ review = {
 }
 
 
-dict = {
+ibm_params = {
     "IAM_API_KEY": os.getenv("IAM_API_KEY"),
     "COUCH_URL": os.getenv("COUCH_URL"),
     "review": review
@@ -47,6 +47,4 @@ def main(dict):
         'message': 'Something went wrong'
         }
     
-
-
-main(dict)
+main(ibm_params)

@@ -50,4 +50,5 @@
     - Created the root\root superuser for the peer review. Took the screen shots requested of carmake and the carmakelist
     - Committed all changes to github
     - LEFT OFF ON CREATE DJANGO PROXY SERVICES OF CLOUD FUNCTIONS
-
+- 03122023
+    - Created the views, models, and urls for getting dealerships, getting reviews, and posting reviews
