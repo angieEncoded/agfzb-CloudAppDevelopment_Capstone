@@ -8,7 +8,7 @@
 # load_dotenv()
 
 # review = {
-# "review": 
+# "review":
 #     {
 #         "id": 1114,
 #         "name": "Upkar Lidder",
@@ -20,9 +20,8 @@
 #         "car_make": "Audi",
 #         "car_model": "Car",
 #         "car_year": 2021
-#     }+
+#     }
 # }
-
 
 # dict = {
 #     "IAM_API_KEY": os.getenv("IAM_API_KEY"),
@@ -47,7 +46,5 @@
 #         'statusCode': 404,
 #         'message': 'Something went wrong'
 #         }
-    
-
 
 # main(dict)

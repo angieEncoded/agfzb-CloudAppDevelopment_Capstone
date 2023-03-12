@@ -12,7 +12,7 @@
 #     "COUCH_URL": os.getenv("COUCH_URL"),
 #     "dealer_id": "15"
 # }
-        
+
 # def main(dict):
 #     authenticator = IAMAuthenticator(dict["IAM_API_KEY"])
 #     service = CloudantV1(authenticator = authenticator)
@@ -23,7 +23,7 @@
 #     ).get_result()
 #     try:
 #         result={
-#             'headers': {'Content-Type':'application/json'}, 
+#             'headers': {'Content-Type':'application/json'},
 #             'body': {'data':response}
 #         }
 #         print(result)
@@ -34,4 +34,4 @@
 #             "message": "Something went wrong"
 #         }
 
-# main(dict)  
+# main(dict)
