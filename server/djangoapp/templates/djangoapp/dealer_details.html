@@ -1,18 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Dealership Review</title>
-    {% load static %}
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-</head>
+{% extends "djangoapp/layout.html" %}
+<!-- Weird that I had to do this here, it doesn't seem to inherit from the layout? -->
+{% load static %}
+{% load humanize %}
 
-    <body>
+{% block body %}
 
-    <!--Add a nav bar here -->
 
-    <!-- Add reviews as cards -->
 
-    </body>
 
-</html>
+<!-- Add reviews as cards -->
+<div class="container mt-3">
+
+    <h2>Reviews for <strong> {{dealer.full_name}} </strong></h2>
+    <a href="{% url 'djangoapp:add_review' id=dealer.id %}" class="btn btn-sm btn-login-color">Post a review</a>
+    {% if reviews %}
+    {% for review in reviews %}
+    <div class="card mt-3" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">
+                {{review.car_make}} {{review.car_model}} {{review.car_year}}
+            </h5>
+            <h6 class="card-subtitle mb-2 text-muted">
+                {% if review.sentiment == "positive" %}
+                <i class="bi bi-hand-thumbs-up text-success"></i>
+                {% elif review.sentiment == "negative" %}
+                <i class="bi bi-hand-thumbs-down text-danger"></i>
+                {% else %}
+                <i class="bi bi-emoji-expressionless text-info"></i>
+                {% endif %}
+            </h6>
+            <p class="card-text">{{review.review}}</p>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">{{review.purchase_date}}</li>
+            </ul>
+
+        </div>
+    </div>
+    {% endfor %}
+    {% else %}
+    <div class="container mt-3">
+        <div class="alert alert-info mt-3" role="alert">
+            No reviews have been posted yet!
+        </div>
+    </div>
+    {% endif %}
+
+
+
+    {% endblock %}

@@ -6,5 +6,35 @@
 
 <!--Add a dealer table here -->
 
+<div class="container mt-5">
+    <table class="table" id="table">
+        <thead>
+            <tr>
+                <th data-field="id">ID</th>
+                <th>Dealer Name</th>
+                <th>City</th>
+                <th>Address</th>
+                <th>Zip</th>
+                <th data-field="state" data-filter-control="select">State</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for dealer in dealership_list %}
+            <tr>
+                <td>{{dealer.id}}</td>
+                <td><a href="{% url 'djangoapp:get_dealer_details' dealer.id %}">{{dealer.full_name}}</a></td>
+                <td>{{dealer.city}}</td>
+                <td>{{dealer.address}}</td>
+                <td>{{dealer.zip}}</td>
+                <td>{{dealer.st}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+
+
+
 
 {% endblock %}
