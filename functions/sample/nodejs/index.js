@@ -27,36 +27,31 @@ function getDbs(cloudant) {
       console.log(err);
     });
 }
+// commenting this out, it's just a scratchpad anyways
+// if (params.dealer_id) {
+//   try {
+//     let dbList = await cloudant.postFind({
+//       db: 'dealerships',
+//       "selector": {
+//         "id": params.dealer_id
+//       }
+//     });
+//     return { "body": dbList.result };
+//   } catch (error) {
+//     return { error: error.description };
+//   }
+// }
 
-
-
-
-
-
-if (params.dealer_id) {
-  try {
-    let dbList = await cloudant.postFind({
-      db: 'dealerships',
-      "selector": {
-        "id": params.dealer_id
-      }
-    });
-    return { "body": dbList.result };
-  } catch (error) {
-    return { error: error.description };
-  }
-}
-
-if (params.state) {
-  try {
-    let dbList = await cloudant.postFind({
-      db: 'dealerships',
-      "selector": {
-        "st": params.state
-      }
-    });
-    return { "body": dbList.result };
-  } catch (error) {
-    return { error: error.description };
-  }
-}
+// if (params.state) {
+//   try {
+//     let dbList = await cloudant.postFind({
+//       db: 'dealerships',
+//       "selector": {
+//         "st": params.state
+//       }
+//     });
+//     return { "body": dbList.result };
+//   } catch (error) {
+//     return { error: error.description };
+//   }
+// }
