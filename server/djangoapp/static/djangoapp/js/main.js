@@ -7,10 +7,3 @@ const open_dealer_details = (url) => {
     // console.log("clicked")
     document.location.href = url
 }
-
-
-$(document).ready( function () {
-    $('#dealer_data_table').DataTable();
-} );
-
-

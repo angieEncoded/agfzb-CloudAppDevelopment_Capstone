@@ -52,3 +52,8 @@
     - LEFT OFF ON CREATE DJANGO PROXY SERVICES OF CLOUD FUNCTIONS
 - 03122023
     - Created the views, models, and urls for getting dealerships, getting reviews, and posting reviews
+    - Complted Module 3
+    - MODULE 4
+        - FINALLY got bootstrap 5, jquery, and bootstrap table playing nicely together. Finished up the drop down and took dealerships.png and dealerships_filter.png for peer review
+    - LEFT OFF ON DEALER DETAILS AND REVIEWS PAGE
+
