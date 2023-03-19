@@ -63,6 +63,15 @@
     - moved on
 - 03192023
     - DEcided to go ahead and factor out the api keys into django-environ - make sure that the requirements.txt has been updated
-    
-
+    - This project will require a .env file in the root of djangoapp with the following entries:
+    ```s
+        REVIEWS_URL=
+        DEALERS_URL=
+        API_KEY=
+        REVIEWS_POST_URL=
+        ALL_DEALERSHIPS_URL=
+        DEALER_BY_ID_URL=
+        REVIEW_SENTIMENTS_URL=
+    ```
+    - 
 
