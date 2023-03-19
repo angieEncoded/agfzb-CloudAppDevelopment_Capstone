@@ -55,5 +55,14 @@
     - Complted Module 3
     - MODULE 4
         - FINALLY got bootstrap 5, jquery, and bootstrap table playing nicely together. Finished up the drop down and took dealerships.png and dealerships_filter.png for peer review
-    - LEFT OFF ON DEALER DETAILS AND REVIEWS PAGE
+- 03182023
+    - Module 4 continued
+    - completed the POST request for dealer reviews. I was trying to use the POST api and it wasn't accepting my token. I guess for this one we were supposed to just use the ANY link. So it's working fine with that.
+    - Took screenshots
+    - Moved all the api keys into environment vars
+    - moved on
+- 03192023
+    - DEcided to go ahead and factor out the api keys into django-environ - make sure that the requirements.txt has been updated
+    
+
 

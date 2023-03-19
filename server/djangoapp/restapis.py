@@ -13,6 +13,13 @@ console = angie.Console()
 # import related models here
 from .models import CarDealer
 
+# Handle environment variables for the api
+import environ
+env = environ.Env()
+environ.Env.read_env()
+API_KEY=env('API_KEY')
+REVIEW_SENTIMENTS_URL=env("REVIEW_SENTIMENTS_URL")
+
 # Create a `get_request` to make HTTP GET requests
 # e.g., response = requests.get(url, params=params, headers={'Content-Type': 'application/json'},
 #                                     auth=HTTPBasicAuth('apikey', api_key))
@@ -47,17 +54,18 @@ def get_request(url, **kwargs):
 # Create a `post_request` to make HTTP POST requests
 # e.g., response = requests.post(url, params=kwargs, json=payload)
 def post_request(url, json_payload, **kwargs): 
-    try:
+    try: 
         response = requests.post(url, params=kwargs, json=json_payload)
-        status_code = response.status_code
-        console.log("With status {} ".format(status_code))
+        # status_code = response.status_code
+        # console.log("With status {} ".format(status_code))
         json_data = json.loads(response.text)
+        # console.log(json_data)
         return json_data
-    except:
-        console.log("Network exception occurred")
+
+    except Exception as e:
+        # console.log("Network exception occurred")
+        # console.log(e)
         return "error in sentiment analyze"
-
-
 
 
 # Create a get_dealers_from_cf method to get dealers from a cloud function
@@ -96,10 +104,6 @@ def get_dealer_by_id_from_cf(url, **kwargs):
     # api_key = kwargs.get("api_key")
     json_result = get_request(url, dealer_id=dealer_id)
     return json_result['docs'][0]
-    
-
-
-
 
 # Create a get_dealer_reviews_from_cf method to get reviews by dealer id from a cloud function
 # def get_dealer_by_id_from_cf(url, dealerId):
@@ -140,15 +144,10 @@ def get_dealer_reviews_from_cf(url, **kwargs):
                 review_results.car_year = dealer_review["car_year"]
             results.append(review_results)
             sentiment = analyze_review_sentiments(review_results.review)
-            print(sentiment)
+            # print(sentiment)
             review_results.sentiment = sentiment
 
     return results
-
-
-
-
-
 
 
 # Create an `analyze_review_sentiments` method to call Watson NLU and analyze text
@@ -157,8 +156,8 @@ def get_dealer_reviews_from_cf(url, **kwargs):
 # - Get the returned sentiment label such as Positive or Negative
 def analyze_review_sentiments(dealerReview, language="en"):
     try:
-        url = "https://api.us-south.natural-language-understanding.watson.cloud.ibm.com/instances/147c0b2c-a788-4db1-882e-a9e9ef6f1cd6"
-        api_key = "gajduij-_tA5a1xUfyOKbq799ewR89vvWDRxB1hvqP03"
+        url = REVIEW_SENTIMENTS_URL
+        api_key = API_KEY
         authenticator = IAMAuthenticator(api_key)
         natural_language_understanding = NaturalLanguageUnderstandingV1(version='2021-08-01',authenticator=authenticator)
         natural_language_understanding.set_service_url(url)
@@ -169,6 +168,3 @@ def analyze_review_sentiments(dealerReview, language="en"):
     except(requests.exceptions.RequestException, ConnectionResetError) as err:
         print("connection error")
         return {"error": err}
-
-
-
